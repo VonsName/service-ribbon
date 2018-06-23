@@ -9,6 +9,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,6 +29,10 @@ import org.springframework.web.client.RestTemplate;
  * 启用服务熔断机制
  */
 @EnableCircuitBreaker
+/**
+ * 启动路由网关
+ */
+@EnableZuulProxy
 public class ServiceRibbonApplication {
 
 	public static void main(String[] args) {
